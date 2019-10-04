@@ -1,0 +1,17 @@
+#!/bin/bash                                                                                                                       
+
+func=(Unsynchronized)
+thread=(2 4 8 16 32)
+iteration=(10 100 1000)
+val=(10 50 100)
+
+for z in "${func[@]}"; do
+    echo "this is $z">>testf
+    for j in "${iteration[@]}"; do
+        echo "iteration $j" >>testf
+        for i in "${thread[@]}"; do
+            ./test $z $i $j  5 6 3 0 3 >> testf
+
+        done
+    done
+done
