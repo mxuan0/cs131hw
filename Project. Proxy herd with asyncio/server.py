@@ -9,7 +9,7 @@ import logging
 
 logging.basicConfig(filename= sys.argv[1] + ".log", format='%(asctime)s %(message)s', filemode='w', level=logging.DEBUG)
 
-API_key = 'AIzaSyDkkYVToiFx7VYBm5-eiFVgynolgT6VfD8'
+API_key = 'key'
 
 #client name key, location 0, timestamp of message 1, server that received the message 2, timediff                                                                                                          
 client_record = {}
