@@ -1,0 +1,28 @@
+The transpose function was modified from the prolog source code.
+
+In the speedup test, the performance of plain_tower compared to tower
+varies based on test cases. For simple 5 by 5 towers, the two predicates
+have similar performance, for the test case
+tower(5, TT1,
+         counts([2,3,2,1,4],
+                [3,1,3,3,2],
+                [4,1,2,5,2],
+                [2,4,2,1,2]))
+the two predicates' cputime ratio is 1.0.
+For simple 6 by 6 towers, which is used in speedup/1,                                                                            \
+
+the test case is
+(6,[[X11,X12,X13,X14,2,X16],[X21,3,X23,X24,X25,5],X3,[4,5,3,6,1,2],[X51,X52,1|X5],X6],
+counts([1,3,2,3,2,3],[3,2,3,2,2,1],[1,4,3,3,2,4],[5,2,4,2,2,1]))
+the cputime for tower is 1640
+the cputime for plain_tower is 7206
+and the ratio is  4.3939024390243899
+
+
+This is the fisrt ambiguous towers found by ambiguous/4
+C = counts([1,2,3,2],[3,2,1,2],[1,2,2,3],[2,3,1,2])
+N = 4
+T1 = [[4,1,2,3],[1,4,3,2],[3,2,1,4],[2,3,4,1]]
+T2 = [[4,1,2,3],[2,4,3,1],[3,2,1,4],[1,3,4,2]]
+No ambiguous towers are found for N<4
+
